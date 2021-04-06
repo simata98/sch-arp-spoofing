@@ -12,6 +12,15 @@ public class Main extends Application {
     public static Pcap pcap = null;
     public static PcapIf device = null;
 
+    // request를 위한 부분
+    public static byte[] myIP = null;
+    public static byte[] senderIP = null;
+    public static byte[] targetIP = null;
+
+    public static byte[] myMAC = null;
+    public static byte[] senderMAC = null;
+    public static byte[] targetMAC = null;
+
     private Stage primaryStage;
     private AnchorPane layout;
 
@@ -19,6 +28,7 @@ public class Main extends Application {
     public void start(Stage primaryStage) {
         this.primaryStage = primaryStage;
         this.primaryStage.setTitle("SCH ARP Spoofing");
+        this.primaryStage.setOnCloseRequest(e -> System.exit(0));
         setLayout();
     }
 
